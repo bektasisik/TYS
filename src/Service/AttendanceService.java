@@ -3,7 +3,6 @@ package Service;
 import Domain.*;
 
 import java.util.*;
-import java.util.function.Predicate;
 
 public class AttendanceService {
     private final Scanner input = new Scanner(System.in);
@@ -18,7 +17,7 @@ public class AttendanceService {
     }
 
     public void takeAttendance() {
-        // todo
+
         String vakit = null;
         System.out.println("Lütfen Vakit Seçiniz.\n1)Sabah\n2)Öğle\n3)İkindi\n4)Akşam\n5)Yatsı");
         System.out.print("Vakit Seçiminiz: ");
@@ -52,12 +51,14 @@ public class AttendanceService {
         }
         Attendance attendance = new Attendance(attendanceId++, vakit);
         attendances.add(attendance);
+        System.out.println(attendance.date +" Talebe burada ise (+) tuşuna basınız. Değil ise (-) tuşuna basınız.");
         for (Student student : students) {
-            // todo
+            // todo while control
+            System.out.print(student.name + " " + student.surname + ": ");
             String kontrol = input.next();
-            boolean isAbsent = Objects.equals(kontrol, "+");
-            StudentAttendance studentAttendance = new StudentAttendance(student, attendance, isAbsent);
-            if(!isAbsent){
+            boolean isAbsence = Objects.equals(kontrol, "+");
+            StudentAttendance studentAttendance = new StudentAttendance(student, attendance, isAbsence);
+            if(!isAbsence){
                 student.absent++;
             }
             studentAttendances.add(studentAttendance);
@@ -71,12 +72,9 @@ public class AttendanceService {
     }
 
     public void printStudentAttendances(int attendanceId) {
-        // todo
-        List<StudentAttendance> choiceList = new ArrayList<>();
         //TODO
-        //choiceList.add(studentAttendances.stream().filter());
-        for (StudentAttendance studentAttendance : choiceList) {
-            System.out.println(studentAttendance.toString());
-        }
+        studentAttendances.stream()
+                .filter(studentAttendance -> studentAttendance.attendance.id == attendanceId)
+                .forEach(studentAttendance -> System.out.println(studentAttendance.toString()));
     }
 }

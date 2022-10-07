@@ -4,10 +4,10 @@ import java.text.*;
 import java.util.*;
 
 public class Attendance {
-    int id;
+    public int id;
     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-    String date = formatter.format(new Date());
-    String prayerTime;
+    public String date = formatter.format(new Date());
+    public String prayerTime;
 
     public Attendance(int id, String prayerTime) {
         this.id = id;

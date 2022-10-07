@@ -1,14 +1,12 @@
 package Service;
 
-import Domain.Student;
-
+import Domain.*;
 import java.util.*;
 
 public class StudentService {
     private final Scanner input = new Scanner(System.in);
     private int studentId = 1;
     public List<Student> students = new ArrayList<>();
-
 
     public void addStudent(){
         System.out.print("Talebenin Adını giriniz:");

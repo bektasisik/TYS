@@ -4,25 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10a5ebb1-c01a-4e15-a842-dae06ddf86f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Attendance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/StudentAttendance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InspectionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/AttendanceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/StudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/StudentInspectionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/StudentService2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/VakitInspection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/VakitService.java" afterDir="false" />
+    <list default="true" id="10a5ebb1-c01a-4e15-a842-dae06ddf86f3" name="Changes" comment="Domain ve service classları oluşturuldu.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CreateTalebe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Attendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Attendance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/StudentAttendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/StudentAttendance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InspectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTemporaryTYS/InspectionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Talebe.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TalebeListesi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Yoklama.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/AttendanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/AttendanceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTemporaryTYS/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StudentInspectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTemporaryTYS/StudentInspectionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StudentService2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTemporaryTYS/StudentService2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VakitInspection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTemporaryTYS/VakitInspection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VakitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTemporaryTYS/VakitService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +52,13 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="taskAO-21" />
+      </list>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -71,7 +73,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/home/bektasisik/Downloads/TYS"
+    "last_opened_file_path": "/home/bektasisik/Downloads/TYS",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RunManager" selected="Application.Main">
@@ -105,6 +110,14 @@
       <option name="presentableId" value="Default" />
       <updated>1664860319899</updated>
     </task>
+    <task id="LOCAL-00001" summary="Domain ve service classları oluşturuldu.">
+      <created>1665070195422</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665070195422</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -118,6 +131,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Domain ve service classları oluşturuldu." />
+    <option name="LAST_COMMIT_MESSAGE" value="Domain ve service classları oluşturuldu." />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -129,6 +146,16 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="8" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Service/AttendanceService.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Service/AttendanceService.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

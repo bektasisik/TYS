@@ -1,3 +1,5 @@
+package MyTemporaryTYS;
+
 public class Student {
     public String name;
     public String surname;

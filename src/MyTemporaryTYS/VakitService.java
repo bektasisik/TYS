@@ -1,3 +1,5 @@
+package MyTemporaryTYS;
+
 import java.util.*;
 
 public class VakitService {

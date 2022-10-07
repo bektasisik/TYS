@@ -5,13 +5,15 @@ import java.text.*;
 
 public class Main {
     public static void main(String[] args) {
+
+        //Services
         StudentService studentService = new StudentService();
         AttendanceService attendanceService = new AttendanceService(studentService.students);
 
 //        StudentService studentService1 = new StudentService();
-//        InspectionService inspectionService = new InspectionService(studentService1);
-//        VakitService vakitService = new VakitService();
-//        VakitInspection vakitInspection = new VakitInspection();
+//        MyExampleTYS.InspectionService inspectionService = new MyExampleTYS.InspectionService(studentService1);
+//        MyExampleTYS.VakitService vakitService = new MyExampleTYS.VakitService();
+//        MyExampleTYS.VakitInspection vakitInspection = new MyExampleTYS.VakitInspection();
 //        YoklamaListesi yoklamaListesi = new YoklamaListesi();
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
@@ -30,7 +32,7 @@ public class Main {
             System.out.print("İşlem: ");
             int choice = input.nextInt();
             switch (choice) {
-                //addTalebe();
+                //addStudent();
                 case 1 -> {
                     String devam;
                     do {
@@ -39,11 +41,11 @@ public class Main {
                         devam = input.next();
                     } while (Objects.equals(devam, "e"));
                 }
-                //talebeList();
+                //printStudents();
                 case 2 -> studentService.printStudents();
-                //takeYoklama();
+                //takeAttendance();
                 case 3 -> attendanceService.takeAttendance();
-                //getYoklamaList();
+                //printAttendance();
                 case 4 -> {
                     attendanceService.printAttendances();
                     System.out.print("Lütfen listelemek istediğiniz yoklama vaktini seçiniz: ");
