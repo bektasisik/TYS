@@ -1,4 +1,4 @@
-package MyTemporaryTYS;
+package mytemporarytys;
 
 import java.util.*;
 import java.text.*;

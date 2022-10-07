@@ -4,20 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10a5ebb1-c01a-4e15-a842-dae06ddf86f3" name="Changes" comment="Domain ve service classları oluşturuldu.">
+    <list default="true" id="10a5ebb1-c01a-4e15-a842-dae06ddf86f3" name="Changes" comment="Class package düzenlendi ve kod çalışır hale getirildi. Kodun eski hali MyTemporaryTYS package adlı klasorun altında toplandı.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Attendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Attendance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/StudentAttendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/StudentAttendance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InspectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTemporaryTYS/InspectionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Attendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Attendance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/StudentAttendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/StudentAttendance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/AttendanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/AttendanceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTemporaryTYS/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StudentInspectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTemporaryTYS/StudentInspectionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StudentService2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTemporaryTYS/StudentService2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VakitInspection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTemporaryTYS/VakitInspection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VakitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTemporaryTYS/VakitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyTemporaryTYS/InspectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mytemporarytys/InspectionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyTemporaryTYS/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mytemporarytys/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyTemporaryTYS/StudentInspectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mytemporarytys/StudentInspectionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyTemporaryTYS/StudentService2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mytemporarytys/StudentService2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyTemporaryTYS/VakitInspection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mytemporarytys/VakitInspection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyTemporaryTYS/VakitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mytemporarytys/VakitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/AttendanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AttendanceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/StudentService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665070195422</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Class package düzenlendi ve kod çalışır hale getirildi. Kodun eski hali MyTemporaryTYS package adlı klasorun altında toplandı.">
+      <created>1665126648710</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665126648710</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,7 +140,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Domain ve service classları oluşturuldu." />
-    <option name="LAST_COMMIT_MESSAGE" value="Domain ve service classları oluşturuldu." />
+    <MESSAGE value="Class package düzenlendi ve kod çalışır hale getirildi. Kodun eski hali MyTemporaryTYS package adlı klasorun altında toplandı." />
+    <option name="LAST_COMMIT_MESSAGE" value="Class package düzenlendi ve kod çalışır hale getirildi. Kodun eski hali MyTemporaryTYS package adlı klasorun altında toplandı." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -146,16 +154,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="8" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Service/AttendanceService.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Service/AttendanceService.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

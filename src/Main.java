@@ -1,4 +1,4 @@
-import Service.*;
+import service.*;
 
 import java.util.*;
 import java.text.*;
@@ -10,6 +10,18 @@ public class Main {
         StudentService studentService = new StudentService();
         AttendanceService attendanceService = new AttendanceService(studentService.students);
 
+        studentService.addStudent("Veli", "Çam");
+        studentService.addStudent("Abdurrahman", "Kutlu");
+        studentService.addStudent("Emre", "Yavuz");
+        studentService.addStudent("Kaan", "Koca");
+        studentService.addStudent("Enes Bahadır", "Yıldırım");
+        studentService.addStudent("Enver", "Yıldırım");
+        studentService.addStudent("Yasin", "Büzgülü");
+        studentService.addStudent("Bektaş", "Işık");
+        studentService.addStudent("Mehmet Ercan", "Akcan");
+        studentService.addStudent("Haruncan", "Yıldırım");
+
+
 //        StudentService studentService1 = new StudentService();
 //        MyExampleTYS.InspectionService inspectionService = new MyExampleTYS.InspectionService(studentService1);
 //        MyExampleTYS.VakitService vakitService = new MyExampleTYS.VakitService();
@@ -17,44 +29,46 @@ public class Main {
 //        YoklamaListesi yoklamaListesi = new YoklamaListesi();
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        Date date = new Date();
         Scanner input = new Scanner(System.in);
-        System.out.println(formatter.format(date) + " Talebe Yoklama Sistemine Hoşgeldiniz...");
+        System.out.println(formatter.format(new Date()) + " Talebe Yoklama Sistemine Hoşgeldiniz...");
 
         boolean choiceBool = true;
         while (choiceBool) {
             System.out.println("Yapmak istediğiniz işlemi seçiniz...");
-            System.out.println("1: Sisteme Talebe Ekleme");
-            System.out.println("2: Talebe Listesi");
-            System.out.println("3: Yoklama Alma");
-            System.out.println("4: Yoklama Sonucu Listesi");
-            System.out.println("5: Sistemden Çıkış");
+            System.out.println("1) Sisteme Talebe Ekleme");
+            System.out.println("2) Talebe Listesi");
+            System.out.println("3) Yoklama Alma");
+            System.out.println("4) Yoklama Sonucu Listesi");
+            System.out.println("5) Sistemden Çıkış");
             System.out.print("İşlem: ");
-            int choice = input.nextInt();
+            String choice = input.next();
             switch (choice) {
                 //addStudent();
-                case 1 -> {
-                    String devam;
-                    do {
-                        studentService.addStudent();
-                        System.out.print("Talebe Eklenmeye devam edilsin mi?(e):");
-                        devam = input.next();
-                    } while (Objects.equals(devam, "e"));
+                case "1" -> {
+                    boolean isAddAgain = true;
+                    String addAgain;
+                    studentService.addStudent();
+                    System.out.print("Talebe Eklenmeye devam edilsin mi?(e/h):");
+                    while (isAddAgain){
+                        addAgain = input.next();
+                        if ("e".equals(addAgain)) {
+                            studentService.addStudent();
+                            System.out.print("Talebe Eklenmeye devam edilsin mi?(e/h):");
+                        } else if ("h".equals(addAgain)) {
+                            isAddAgain = false;
+                        } else {
+                            System.out.print("Yanlış bir tuşa bastınız. (e/h):");
+                        }
+                    }
                 }
                 //printStudents();
-                case 2 -> studentService.printStudents();
+                case "2" -> studentService.printStudents();
                 //takeAttendance();
-                case 3 -> attendanceService.takeAttendance();
-                //printAttendance();
-                case 4 -> {
-                    attendanceService.printAttendances();
-                    System.out.print("Lütfen listelemek istediğiniz yoklama vaktini seçiniz: ");
-                    //TODO while kontrolü ekle
-                    int id = input.nextInt();
-                    attendanceService.printStudentAttendances(id);
-                }
+                case "3" -> attendanceService.takeAttendance();
+                //printAttendances();
+                case "4" -> attendanceService.printAttendances();
                 //cıkış
-                case 5 -> choiceBool = false;
+                case "5" -> choiceBool = false;
 
                 default -> System.out.println("Yanlış Tuşa bastınız.");
             }

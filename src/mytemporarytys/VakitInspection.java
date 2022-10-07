@@ -1,4 +1,4 @@
-package MyTemporaryTYS;
+package mytemporarytys;
 
 public class VakitInspection {
 
