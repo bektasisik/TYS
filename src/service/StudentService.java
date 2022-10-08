@@ -13,6 +13,9 @@ public class StudentService {
         students.add(student);
     }
 
+    // Kullanıcıdan AD-SOYAD bilgilerini alır.
+    // Aldığı bilgiler ile student class'ını oluşturur.
+    // O class'ı bir obje haline getirir ve listeye ekler.
     public void addStudent() {
         System.out.print("Talebenin Adını giriniz:");
         String name = input.nextLine();
@@ -26,11 +29,15 @@ public class StudentService {
                 + "\nTalebe Soyadı: " + student.getSurname());
         System.out.println("Talebe Eklenmiştir.");
     }
-
+    //Talebe listesini ekrana yazdırır.
     public void printStudents() {
-        System.out.println("Talebe Numarası: Ad Soyad");
+        String leftAlignFormat = "| %-8s | %-14s | %-15s | %-13s |%n";
+        System.out.format("+-----------+----------------+-----------------+--------------------+%n");
+        System.out.format("| Talebe NO |       AD       |      SOYAD      | TOPLAM DEVAMSIZLIK |%n");
+        System.out.format("+-----------+----------------+-----------------+--------------------+%n");
         for (Student student : students) {
-            System.out.println(student.getId() + ": " + student.getName() + " " + student.getSurname());
+            System.out.format(leftAlignFormat, "\t"+student.getId(), student.getName(), student.getSurname(), "\t\t"+student.getAbsent());
         }
+        System.out.format("+-----------+----------------+-----------------+--------------------+%n");
     }
 }

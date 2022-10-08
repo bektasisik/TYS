@@ -9,6 +9,14 @@ public class StudentAttendance {
         return attendance;
     }
 
+    public Student getStudent() {
+        return student;
+    }
+
+    public String getIsAbsenceToString() {
+        return isAbsence ? "Var" : "Yok";
+    }
+
     public StudentAttendance(Student student, Attendance attendance, Boolean isAbsence) {
         this.student = student;
         this.attendance = attendance;
@@ -17,7 +25,7 @@ public class StudentAttendance {
 
     @Override
     public String toString() {
-        String isAbsenceToString = isAbsence ? "Var" : "Yok";
-        return student.getName() + " " + student.getSurname() + " " + isAbsenceToString;
+        return student.getName() + " " + student.getSurname() + " " + isAbsence;
+
     }
 }

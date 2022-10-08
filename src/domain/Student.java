@@ -17,7 +17,7 @@ public class Student {
     }
 
     public int getAbsent() {
-        return absent = 0;
+        return absent ;
     }
 
     public void setAbsent() {

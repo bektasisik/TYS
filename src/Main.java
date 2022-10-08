@@ -10,28 +10,24 @@ public class Main {
         StudentService studentService = new StudentService();
         AttendanceService attendanceService = new AttendanceService(studentService.students);
 
+        // Listeye proje başlatıldığı zaman default 10 adet talebe ekler.
+        // Bir sonraki talebe 11. sıradan başlar.
         studentService.addStudent("Veli", "Çam");
         studentService.addStudent("Abdurrahman", "Kutlu");
-        studentService.addStudent("Emre", "Yavuz");
-        studentService.addStudent("Kaan", "Koca");
-        studentService.addStudent("Enes Bahadır", "Yıldırım");
-        studentService.addStudent("Enver", "Yıldırım");
-        studentService.addStudent("Yasin", "Büzgülü");
-        studentService.addStudent("Bektaş", "Işık");
-        studentService.addStudent("Mehmet Ercan", "Akcan");
-        studentService.addStudent("Haruncan", "Yıldırım");
-
-
-//        StudentService studentService1 = new StudentService();
-//        MyExampleTYS.InspectionService inspectionService = new MyExampleTYS.InspectionService(studentService1);
-//        MyExampleTYS.VakitService vakitService = new MyExampleTYS.VakitService();
-//        MyExampleTYS.VakitInspection vakitInspection = new MyExampleTYS.VakitInspection();
-//        YoklamaListesi yoklamaListesi = new YoklamaListesi();
+//        studentService.addStudent("Emre", "Yavuz");
+//        studentService.addStudent("Kaan", "Koca");
+//        studentService.addStudent("Enes Bahadır", "Yıldırım");
+//        studentService.addStudent("Enver", "Yıldırım");
+//        studentService.addStudent("Yasin", "Büzgülü");
+//        studentService.addStudent("Bektaş", "Işık");
+//        studentService.addStudent("Mehmet Ercan", "Akcan");
+//        studentService.addStudent("Haruncan", "Yıldırım");
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Scanner input = new Scanner(System.in);
         System.out.println(formatter.format(new Date()) + " Talebe Yoklama Sistemine Hoşgeldiniz...");
 
+        //İşlem Menüsü seçimi kontrolü yapılır.
         boolean choiceBool = true;
         while (choiceBool) {
             System.out.println("Yapmak istediğiniz işlemi seçiniz...");
@@ -45,17 +41,16 @@ public class Main {
             switch (choice) {
                 //addStudent();
                 case "1" -> {
-                    boolean isAddAgain = true;
                     String addAgain;
                     studentService.addStudent();
                     System.out.print("Talebe Eklenmeye devam edilsin mi?(e/h):");
-                    while (isAddAgain){
+                    while (true){
                         addAgain = input.next();
                         if ("e".equals(addAgain)) {
                             studentService.addStudent();
                             System.out.print("Talebe Eklenmeye devam edilsin mi?(e/h):");
                         } else if ("h".equals(addAgain)) {
-                            isAddAgain = false;
+                            break;
                         } else {
                             System.out.print("Yanlış bir tuşa bastınız. (e/h):");
                         }
@@ -69,7 +64,6 @@ public class Main {
                 case "4" -> attendanceService.printAttendances();
                 //cıkış
                 case "5" -> choiceBool = false;
-
                 default -> System.out.println("Yanlış Tuşa bastınız.");
             }
         }

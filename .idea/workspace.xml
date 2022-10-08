@@ -4,20 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10a5ebb1-c01a-4e15-a842-dae06ddf86f3" name="Changes" comment="Class package düzenlendi ve kod çalışır hale getirildi. Kodun eski hali MyTemporaryTYS package adlı klasorun altında toplandı.">
+    <list default="true" id="10a5ebb1-c01a-4e15-a842-dae06ddf86f3" name="Changes" comment="while kontrolleri yapıldı. encapsulation işlemleri yapıldı. (stream().noneMatch()) kontrolü yapıldı. türkçe terimler çevrildi.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Attendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Attendance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/StudentAttendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/StudentAttendance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyTemporaryTYS/InspectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mytemporarytys/InspectionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyTemporaryTYS/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mytemporarytys/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyTemporaryTYS/StudentInspectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mytemporarytys/StudentInspectionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyTemporaryTYS/StudentService2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mytemporarytys/StudentService2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyTemporaryTYS/VakitInspection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mytemporarytys/VakitInspection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyTemporaryTYS/VakitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mytemporarytys/VakitService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/AttendanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AttendanceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/StudentAttendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/StudentAttendance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mytemporarytys/InspectionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mytemporarytys/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mytemporarytys/StudentInspectionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mytemporarytys/StudentService2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mytemporarytys/VakitInspection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mytemporarytys/VakitService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/AttendanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AttendanceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/StudentService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +44,7 @@
         </map>
       </branch-storage>
     </favorite-branches>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
@@ -124,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665126648710</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="while kontrolleri yapıldı. encapsulation işlemleri yapıldı. (stream().noneMatch()) kontrolü yapıldı. türkçe terimler çevrildi.">
+      <created>1665178484945</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665178484945</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,7 +148,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Domain ve service classları oluşturuldu." />
     <MESSAGE value="Class package düzenlendi ve kod çalışır hale getirildi. Kodun eski hali MyTemporaryTYS package adlı klasorun altında toplandı." />
-    <option name="LAST_COMMIT_MESSAGE" value="Class package düzenlendi ve kod çalışır hale getirildi. Kodun eski hali MyTemporaryTYS package adlı klasorun altında toplandı." />
+    <MESSAGE value="while kontrolleri yapıldı. encapsulation işlemleri yapıldı. (stream().noneMatch()) kontrolü yapıldı. türkçe terimler çevrildi." />
+    <option name="LAST_COMMIT_MESSAGE" value="while kontrolleri yapıldı. encapsulation işlemleri yapıldı. (stream().noneMatch()) kontrolü yapıldı. türkçe terimler çevrildi." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -153,6 +161,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="8" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.UnknownFormatConversionException" package="java.util" />
+          <option name="timeStamp" value="42" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
