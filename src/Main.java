@@ -64,7 +64,7 @@ public class Main {
                 case "3" -> attendanceService.takeAttendance();
                 //printAttendances();
                 case "4" -> attendanceService.printAttendances();
-                //cıkış
+                //exit
                 case "5" -> choiceBool = false;
                 default -> System.out.println("Yanlış Tuşa bastınız.");
             }
