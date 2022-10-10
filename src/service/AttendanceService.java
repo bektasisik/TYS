@@ -114,31 +114,94 @@ public class AttendanceService {
                 try {
                     String choiceAttendanceId = input.next();
                     Optional<Attendance> attendanceOptional = attendances.stream().filter(attendance -> attendance.getId() == Integer.parseInt(choiceAttendanceId)).findFirst();
-                    if (attendanceOptional.isEmpty()){
+                    if (attendanceOptional.isEmpty()) {
                         System.out.print("Lütfen listede olan yoklama numaralarından birini seçiniz: ");
                         continue;
                     }
                     Attendance attendance = attendanceOptional.get();
-                    System.out.println(attendance);
+                    System.out.format("+-----------------------------------------------------+%n");
+                    String leftAlignFormat1 = "| \t\t%-12s - %-27s |%n";
+                    System.out.format(leftAlignFormat1,
+                            "\t" + attendance.getDate(),
+                            " " + attendance.getPrayerTime());
                     System.out.format("+----------------+-----------------+------------------+%n");
                     System.out.format("|       AD       |      SOYAD      | DEVAMSIZ BİLGİSİ |%n");
                     System.out.format("+----------------+-----------------+------------------+%n");
-                    String leftAlignFormat = "| %-14s | %-15s | %-14s |%n";
+                    String leftAlignFormat2 = "| %-14s | %-15s | %-14s |%n";
                     List<StudentAttendance> studentAttendanceFilter = studentAttendances.stream()
                             .filter(studentAttendance -> studentAttendance.getAttendance().getId() == attendance.getId()).toList();
 
                     if (studentAttendanceFilter.size() == 0) {
                         System.out.println("Listeniz Boş. Ana Ekrana yönlendiriliyorsunuz.");
-                    }else {
-                        studentAttendanceFilter.forEach(studentAttendance -> System.out.format(leftAlignFormat,
+                    } else {
+                        studentAttendanceFilter.forEach(studentAttendance -> System.out.format(leftAlignFormat2,
                                 studentAttendance.getStudent().getName(),
                                 studentAttendance.getStudent().getSurname(),
                                 "\t" + studentAttendance.getIsAbsenceToString()));
                         System.out.format("+----------------+-----------------+------------------+%n");
                     }
                     break;
+                } catch (Exception e) {
+                    System.out.print("Hatalı giriş yaptınız. Lütfen Listedeki numaralardan seçiniz: ");
+                }
+            }
+        }
+    }
+    public void printWithStudentId() {
+        if (students.size() == 0) {
+            System.out.println("\nListeniz boş. Ana sayfaya yönlendiriliyorsunuz.");
+        } else {
+            String leftAlignFormat = "| %-7s | %-14s | %-15s |%n";
+            System.out.format("+----------+----------------+-----------------+%n");
+            System.out.format("|    No    |       AD       |      SOYAD      |%n");
+            System.out.format("+----------+----------------+-----------------+%n");
+            for (Student student : students) {
+                System.out.format(leftAlignFormat,
+                        "\t " + student.getId(),
+                        " " + student.getName(),
+                        " " + student.getSurname());
+            }
+            System.out.format("+----------+----------------+-----------------+%n");
+            printAttendanceWithStudentId();
+        }
+    }
 
-                }catch (Exception e){
+    public void printAttendanceWithStudentId() {
+        if (studentAttendances.size() == 0) {
+            System.out.println("\nListeniz Boş. Ana Ekrana yönlendiriliyorsunuz.");
+        } else {
+            System.out.print("\nLütfen listelemek istediğiniz talebeyi seçiniz: ");
+            while (true) {
+                try {
+                    String choiceStudentId = input.next();
+                    Optional<Student> studentOptional = students.stream().filter(student -> student.getId() == Integer.parseInt(choiceStudentId)).findFirst();
+                    if (studentOptional.isEmpty()) {
+                        System.out.print("Lütfen listede olan yoklama numaralarından birini seçiniz: ");
+                        continue;
+                    }
+                    Student student = studentOptional.get();
+                    System.out.format("+----------------+---------+------------------+%n");
+                    String leftAlignFormat1 = "| %-36s |%n";
+                    System.out.format(leftAlignFormat1,
+                            "\t\t\t  " + student.getName() + " " + student.getSurname());
+                    System.out.format("+----------------+---------+------------------+%n");
+                    System.out.format("|      Tarih     |  Vakit  | DEVAMSIZ BİLGİSİ |%n");
+                    System.out.format("+----------------+---------+------------------+%n");
+                    String leftAlignFormat2 = "| %-14s | %-7s | %-11s |%n";
+                    List<StudentAttendance> studentAttendanceFilter = studentAttendances.stream()
+                            .filter(studentAttendance -> studentAttendance.getStudent().getId() == student.getId()).toList();
+
+                    if (studentAttendanceFilter.size() == 0) {
+                        System.out.println("Listeniz Boş. Ana Ekrana yönlendiriliyorsunuz.");
+                    } else {
+                        studentAttendanceFilter.forEach(studentAttendance -> System.out.format(leftAlignFormat2,
+                                " " + studentAttendance.getAttendance().getDate(),
+                                " " + studentAttendance.getAttendance().getPrayerTime(),
+                                "\t\t" + studentAttendance.getIsAbsenceToString()));
+                        System.out.format("+----------------+---------+------------------+%n");
+                    }
+                    break;
+                } catch (Exception e) {
                     System.out.print("Hatalı giriş yaptınız. Lütfen Listedeki numaralardan seçiniz: ");
                 }
             }

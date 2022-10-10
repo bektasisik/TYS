@@ -14,14 +14,14 @@ public class Main {
         // Bir sonraki talebe 11. sıradan başlar.
         studentService.addStudent("Veli", "Çam");
         studentService.addStudent("Abdurrahman", "Kutlu");
-        studentService.addStudent("Emre", "Yavuz");
-        studentService.addStudent("Kaan", "Koca");
-        studentService.addStudent("Enes Bahadır", "Yıldırım");
-        studentService.addStudent("Enver", "Yıldırım");
-        studentService.addStudent("Yasin", "Büzgülü");
-        studentService.addStudent("Bektaş", "Işık");
-        studentService.addStudent("Mehmet Ercan", "Akcan");
-        studentService.addStudent("Haruncan", "Yıldırım");
+//        studentService.addStudent("Emre", "Yavuz");
+//        studentService.addStudent("Kaan", "Koca");
+//        studentService.addStudent("Enes Bahadır", "Yıldırım");
+//        studentService.addStudent("Enver", "Yıldırım");
+//        studentService.addStudent("Yasin", "Büzgülü");
+//        studentService.addStudent("Bektaş", "Işık");
+//        studentService.addStudent("Mehmet Ercan", "Akcan");
+//        studentService.addStudent("Haruncan", "Yıldırım");
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Scanner input = new Scanner(System.in);
@@ -31,13 +31,14 @@ public class Main {
         boolean choiceBool = true;
         while (choiceBool) {
             System.out.println("\nYapmak istediğiniz işlemi seçiniz...");
-            System.out.println("+----+-------------------------+");
-            System.out.println("| 1) | Sisteme Talebe Ekleme   |");
-            System.out.println("| 2) | Talebe Listesi          |");
-            System.out.println("| 3) | Yoklama Alma            |");
-            System.out.println("| 4) | Yoklama Sonucu Listesi  |");
-            System.out.println("| 5) | Sistemden Çıkış         |");
-            System.out.println("+----+-------------------------+");
+            System.out.println("+----+--------------------------------------+");
+            System.out.println("| 1) | Sisteme Talebe Ekleme                |");
+            System.out.println("| 2) | Talebe Listesi                       |");
+            System.out.println("| 3) | Yoklama Alma                         |");
+            System.out.println("| 4) | Vakite Göre Yoklama Sonucu Listesi   |");
+            System.out.println("| 5) | Talebeye Göre Yoklama Sonucu Listesi |");
+            System.out.println("| 6) | Sistemden Çıkış                      |");
+            System.out.println("+----+--------------------------------------+");
             System.out.print("İşlem: ");
             String choice = input.next();
             switch (choice) {
@@ -64,8 +65,10 @@ public class Main {
                 case "3" -> attendanceService.takeAttendance();
                 //printAttendances();
                 case "4" -> attendanceService.printAttendances();
+                //printWithStudentId();
+                case "5" -> attendanceService.printWithStudentId();
                 //exit
-                case "5" -> choiceBool = false;
+                case "6" -> choiceBool = false;
                 default -> System.out.println("Yanlış Tuşa bastınız.");
             }
         }
