@@ -9,15 +9,17 @@ public class Student {
     public int getId() {
         return id;
     }
+
     public String getName() {
         return name;
     }
+
     public String getSurname() {
         return surname;
     }
 
     public int getAbsent() {
-        return absent ;
+        return absent;
     }
 
     public void setAbsent() {

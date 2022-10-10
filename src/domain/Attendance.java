@@ -12,9 +12,11 @@ public class Attendance {
     public int getId() {
         return id;
     }
+
     public String getPrayerTime() {
         return prayerTime;
     }
+
     public String getDate() {
         return date;
     }

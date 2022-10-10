@@ -4,7 +4,6 @@ import domain.*;
 
 import java.text.*;
 import java.util.*;
-import java.util.stream.Stream;
 
 public class AttendanceService {
     private final Scanner input = new Scanner(System.in);
@@ -29,7 +28,15 @@ public class AttendanceService {
     public void takeAttendance() {
 
         String prayerTime;
-        System.out.println(formatter.format(new Date()) + " Lütfen Vakit Seçiniz.\n1)Sabah\n2)Öğle\n3)İkindi\n4)Akşam\n5)Yatsı");
+        System.out.println("\n" + formatter.format(new Date()) + " Lütfen Vakit Seçiniz.");
+        System.out.println("+----+--------+");
+        System.out.println("| 1) | Sabah  |");
+        System.out.println("| 2) | Öğle   |");
+        System.out.println("| 3) | İkindi |");
+        System.out.println("| 4) | Akşam  |");
+        System.out.println("| 5) | Yatsı  |");
+        System.out.println("+----+--------+");
+
         System.out.print("Vakit Seçiminiz: ");
 
         label:
@@ -57,7 +64,7 @@ public class AttendanceService {
         }
         Attendance attendance = new Attendance(getAttendanceId(), prayerTime);
         attendances.add(attendance);
-        System.out.println(prayerTime + " vakti için talebe burada ise (+) tuşuna basınız. Değil ise (-) tuşuna basınız.");
+        System.out.println("\n" + prayerTime + " vakti için talebe burada ise (+) tuşuna basınız. Değil ise (-) tuşuna basınız.");
 
         for (Student student : students) {
             System.out.print(student.getName() + " " + student.getSurname() + ": ");
@@ -80,8 +87,16 @@ public class AttendanceService {
 
     //Yoklamalar listesini ekrana çağırır.
     public void printAttendances() {
+        String leftAlignFormat = "| %-7s | %-13s | %-7s |%n";
+        System.out.format("+----------+-----------------+---------+%n");
+        System.out.format("|    No    |      Tarih      |  Vakit  |%n");
+        System.out.format("+----------+-----------------+---------+%n");
         for (Attendance attendance : attendances) {
-            System.out.println(attendance);
+            System.out.format(leftAlignFormat,
+                    "\t " + attendance.getId(),
+                    "\t" + attendance.getDate(),
+                    " " + attendance.getPrayerTime());
+            System.out.format("+----------+-----------------+---------+%n");
         }
         printStudentAttendances();
     }
@@ -95,6 +110,7 @@ public class AttendanceService {
                     .noneMatch(studentAttendance -> studentAttendance.getAttendance().getId() == choiceAttendanceId)) {
                 System.out.print("Lütfen listede olan yoklama numaralarından birini seçiniz: ");
             } else {
+                System.out.println();
                 System.out.format("+----------------+-----------------+------------------+%n");
                 System.out.format("|       AD       |      SOYAD      | DEVAMSIZ BİLGİSİ |%n");
                 System.out.format("+----------------+-----------------+------------------+%n");

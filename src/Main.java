@@ -30,12 +30,14 @@ public class Main {
         //İşlem Menüsü seçimi kontrolü yapılır.
         boolean choiceBool = true;
         while (choiceBool) {
-            System.out.println("Yapmak istediğiniz işlemi seçiniz...");
-            System.out.println("1) Sisteme Talebe Ekleme");
-            System.out.println("2) Talebe Listesi");
-            System.out.println("3) Yoklama Alma");
-            System.out.println("4) Yoklama Sonucu Listesi");
-            System.out.println("5) Sistemden Çıkış");
+            System.out.println("\nYapmak istediğiniz işlemi seçiniz...");
+            System.out.println("+----+-------------------------+");
+            System.out.println("| 1) | Sisteme Talebe Ekleme   |");
+            System.out.println("| 2) | Talebe Listesi          |");
+            System.out.println("| 3) | Yoklama Alma            |");
+            System.out.println("| 4) | Yoklama Sonucu Listesi  |");
+            System.out.println("| 5) | Sistemden Çıkış         |");
+            System.out.println("+----+-------------------------+");
             System.out.print("İşlem: ");
             String choice = input.next();
             switch (choice) {
@@ -44,7 +46,7 @@ public class Main {
                     String addAgain;
                     studentService.addStudent();
                     System.out.print("Talebe Eklenmeye devam edilsin mi?(e/h):");
-                    while (true){
+                    while (true) {
                         addAgain = input.next();
                         if ("e".equals(addAgain)) {
                             studentService.addStudent();
