@@ -14,14 +14,14 @@ public class Main {
         // Bir sonraki talebe 11. sıradan başlar.
         studentService.addStudent("Veli", "Çam");
         studentService.addStudent("Abdurrahman", "Kutlu");
-//        studentService.addStudent("Emre", "Yavuz");
-//        studentService.addStudent("Kaan", "Koca");
-//        studentService.addStudent("Enes Bahadır", "Yıldırım");
-//        studentService.addStudent("Enver", "Yıldırım");
-//        studentService.addStudent("Yasin", "Büzgülü");
-//        studentService.addStudent("Bektaş", "Işık");
-//        studentService.addStudent("Mehmet Ercan", "Akcan");
-//        studentService.addStudent("Haruncan", "Yıldırım");
+        studentService.addStudent("Emre", "Yavuz");
+        studentService.addStudent("Kaan", "Koca");
+        studentService.addStudent("Enes Bahadır", "Yıldırım");
+        studentService.addStudent("Enver", "Yıldırım");
+        studentService.addStudent("Yasin", "Büzgülü");
+        studentService.addStudent("Bektaş", "Işık");
+        studentService.addStudent("Mehmet Ercan", "Akcan");
+        studentService.addStudent("Haruncan", "Yıldırım");
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Scanner input = new Scanner(System.in);

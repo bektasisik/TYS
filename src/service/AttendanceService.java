@@ -98,15 +98,13 @@ public class AttendanceService {
                 System.out.format("+----------------+-----------------+------------------+%n");
                 System.out.format("|       AD       |      SOYAD      | DEVAMSIZ BİLGİSİ |%n");
                 System.out.format("+----------------+-----------------+------------------+%n");
-                studentAttendances.stream()
-                        .filter(studentAttendance -> studentAttendance.getAttendance().getId() == choiceAttendanceId);
                 String leftAlignFormat = "| %-14s | %-15s | %-14s |%n";
-                for (StudentAttendance studentAttendance : studentAttendances) {
-                    System.out.format(leftAlignFormat,
-                            studentAttendance.getStudent().getName(),
-                            studentAttendance.getStudent().getSurname(),
-                            "\t" + studentAttendance.getIsAbsenceToString());
-                }
+                studentAttendances.stream()
+                        .filter(studentAttendance -> studentAttendance.getAttendance().getId() == choiceAttendanceId)
+                        .forEach(studentAttendance -> System.out.format(leftAlignFormat,
+                                studentAttendance.getStudent().getName(),
+                                studentAttendance.getStudent().getSurname(),
+                                "\t" + studentAttendance.getIsAbsenceToString()));
                 System.out.format("+----------------+-----------------+------------------+%n");
                 break;
             }
