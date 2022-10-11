@@ -20,9 +20,17 @@ public class StudentService {
     public void addStudent() {
         String name, surname;
         while (true) {
-            name = getNameInput("Talebe adı", 14);
-            surname = getNameInput("Talebe soyadı", 15);
+            name = getNameInput("adı", 20);
+            surname = getNameInput("soyadı", 19);
 
+            if (name.length()<3){
+                System.out.println("İsim uzunluğu min 3 karakter olmalıdır.");
+                continue;
+            }
+            if (surname.length()<2){
+                System.out.println("Soyisim uzunluğu min 2 karakter olmalıdır.");
+                continue;
+            }
             if (name.length() + surname.length() < 5) {
                 System.out.println("Yanlış AD-SOYAD girdiniz.");
                 continue;
@@ -42,24 +50,28 @@ public class StudentService {
         if (students.size() == 0) {
             System.out.println("\nTalebe listeniz boş. Ana sayfaya yönlendiriliyorsunuz.");
         } else {
-            String leftAlignFormat = "| %-8s | %-14s | %-15s | %-13s |%n";
+            String leftAlignFormat = "| %-8s | %-20s | %-19s | %-12s |%n";
             System.out.println();
-            System.out.format("+-----------+----------------+-----------------+--------------------+%n");
-            System.out.format("| Talebe NO |       AD       |      SOYAD      | TOPLAM DEVAMSIZLIK |%n");
-            System.out.format("+-----------+----------------+-----------------+--------------------+%n");
+            System.out.format("+-----------+----------------------+---------------------+--------------------+%n");
+            System.out.format("| Talebe NO |          AD          |        SOYAD        | TOPLAM DEVAMSIZLIK |%n");
+            System.out.format("+-----------+----------------------+---------------------+--------------------+%n");
             for (Student student : students) {
-                System.out.format(leftAlignFormat, "\t" + student.getId(), student.getName(), student.getSurname(), "\t\t" + student.getAbsent());
+                System.out.format(leftAlignFormat,
+                        "\t  " + student.getId(),
+                        student.getName(),
+                        student.getSurname(),
+                        "\t\t\t" + student.getAbsent());
             }
-            System.out.format("+-----------+----------------+-----------------+--------------------+%n");
+            System.out.format("+-----------+----------------------+---------------------+--------------------+%n");
         }
     }
 
     private String getNameInput(String message, int maxLength) {
         String name = "";
         while (true) {
-            System.out.format("\n%s giriniz: ", message);
+            System.out.format("\nTalebe %s giriniz: ", message);
             name = input.nextLine();
-            if (!name.matches("[a-zA-ZğüşöçıİĞÜŞÖÇ]+")) {
+            if (!name.matches("[a-zA-Z ğüşöçıİĞÜŞÖÇ]+\\S\\D\\Z")) {
                 System.out.println("\nLütfen sadece harf kullanın.");
                 continue;
             }

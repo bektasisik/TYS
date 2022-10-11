@@ -63,11 +63,9 @@ public class AttendanceService {
             Attendance attendance = new Attendance(attendanceId++, prayerTime);
             attendances.add(attendance);
             System.out.println("\n" + prayerTime + " vakti için talebe burada ise (+) tuşuna basınız. Değil ise (-) tuşuna basınız.");
-
             for (Student student : students) {
                 System.out.print(student.getName() + " " + student.getSurname() + ": ");
                 boolean isAbsence = true;
-
                 while (true) {
                     String kontrol = input.next();
                     if (kontrol.equals("+")) break;
@@ -80,6 +78,7 @@ public class AttendanceService {
                 StudentAttendance studentAttendance = new StudentAttendance(student, attendance, isAbsence);
                 studentAttendances.add(studentAttendance);
             }
+            System.out.format("+----------------------+---------------------+---------------------+%n");
             System.out.println("Yoklama işlemi bitmiştir. Ana sayfaya yönlendiriliyorsunuz. ");
         }
     }
@@ -119,15 +118,15 @@ public class AttendanceService {
                         continue;
                     }
                     Attendance attendance = attendanceOptional.get();
-                    System.out.format("+-----------------------------------------------------+%n");
-                    String leftAlignFormat1 = "| \t\t%-12s - %-27s |%n";
+                    System.out.format("+------------------------------------------------------------------+%n");
+                    String leftAlignFormat1 = "| \t\t\t\t%-12s - %-32s |%n";
                     System.out.format(leftAlignFormat1,
                             "\t" + attendance.getDate(),
                             " " + attendance.getPrayerTime());
-                    System.out.format("+----------------+-----------------+------------------+%n");
-                    System.out.format("|       AD       |      SOYAD      | DEVAMSIZ BİLGİSİ |%n");
-                    System.out.format("+----------------+-----------------+------------------+%n");
-                    String leftAlignFormat2 = "| %-14s | %-15s | %-14s |%n";
+                    System.out.format("+----------------------+---------------------+---------------------+%n");
+                    System.out.format("|          AD          |        SOYAD        | DEVAMSIZLIK BİLGİSİ |%n");
+                    System.out.format("+----------------------+---------------------+---------------------+%n");
+                    String leftAlignFormat2 = "| %-20s | %-19s | %-16s |%n";
                     List<StudentAttendance> studentAttendanceFilter = studentAttendances.stream()
                             .filter(studentAttendance -> studentAttendance.getAttendance().getId() == attendance.getId()).toList();
 
@@ -137,8 +136,8 @@ public class AttendanceService {
                         studentAttendanceFilter.forEach(studentAttendance -> System.out.format(leftAlignFormat2,
                                 studentAttendance.getStudent().getName(),
                                 studentAttendance.getStudent().getSurname(),
-                                "\t" + studentAttendance.getIsAbsenceToString()));
-                        System.out.format("+----------------+-----------------+------------------+%n");
+                                "\t\t  " + studentAttendance.getIsAbsenceToString()));
+                        System.out.format("+----------------------+---------------------+---------------------+%n");
                     }
                     break;
                 } catch (Exception e) {
@@ -148,27 +147,27 @@ public class AttendanceService {
         }
     }
     public void printWithStudentId() {
-        if (students.size() == 0) {
+        if (attendances.size() == 0) {
             System.out.println("\nListeniz boş. Ana sayfaya yönlendiriliyorsunuz.");
         } else {
-            String leftAlignFormat = "| %-7s | %-14s | %-15s |%n";
-            System.out.format("+----------+----------------+-----------------+%n");
-            System.out.format("|    No    |       AD       |      SOYAD      |%n");
-            System.out.format("+----------+----------------+-----------------+%n");
+            String leftAlignFormat = "| %-7s | %-20s | %-19s |%n";
+            System.out.format("+----------+----------------------+---------------------+%n");
+            System.out.format("|    No    |          AD          |        SOYAD        |%n");
+            System.out.format("+----------+----------------------+---------------------+%n");
             for (Student student : students) {
                 System.out.format(leftAlignFormat,
                         "\t " + student.getId(),
-                        " " + student.getName(),
-                        " " + student.getSurname());
+                        student.getName(),
+                        student.getSurname());
             }
-            System.out.format("+----------+----------------+-----------------+%n");
+            System.out.format("+----------+----------------------+---------------------+%n");
             printAttendanceWithStudentId();
         }
     }
 
     public void printAttendanceWithStudentId() {
         if (studentAttendances.size() == 0) {
-            System.out.println("\nListeniz Boş. Ana Ekrana yönlendiriliyorsunuz.");
+            System.out.println("\nTalebe listeniz Boş. Ana Ekrana yönlendiriliyorsunuz.");
         } else {
             System.out.print("\nLütfen listelemek istediğiniz talebeyi seçiniz: ");
             while (true) {
@@ -180,13 +179,13 @@ public class AttendanceService {
                         continue;
                     }
                     Student student = studentOptional.get();
-                    System.out.format("+----------------+---------+------------------+%n");
-                    String leftAlignFormat1 = "| %-36s |%n";
+                    System.out.format("+----------------+---------+---------------------+%n");
+                    String leftAlignFormat1 = "| %-39s |%n";
                     System.out.format(leftAlignFormat1,
-                            "\t\t\t  " + student.getName() + " " + student.getSurname());
-                    System.out.format("+----------------+---------+------------------+%n");
-                    System.out.format("|      Tarih     |  Vakit  | DEVAMSIZ BİLGİSİ |%n");
-                    System.out.format("+----------------+---------+------------------+%n");
+                            "\t  " + student.getName() + " " + student.getSurname());
+                    System.out.format("+----------------+---------+---------------------+%n");
+                    System.out.format("|      Tarih     |  Vakit  | DEVAMSIZLIK BİLGİSİ |%n");
+                    System.out.format("+----------------+---------+---------------------+%n");
                     String leftAlignFormat2 = "| %-14s | %-7s | %-11s |%n";
                     List<StudentAttendance> studentAttendanceFilter = studentAttendances.stream()
                             .filter(studentAttendance -> studentAttendance.getStudent().getId() == student.getId()).toList();
@@ -198,7 +197,7 @@ public class AttendanceService {
                                 " " + studentAttendance.getAttendance().getDate(),
                                 " " + studentAttendance.getAttendance().getPrayerTime(),
                                 "\t\t" + studentAttendance.getIsAbsenceToString()));
-                        System.out.format("+----------------+---------+------------------+%n");
+                        System.out.format("+----------------+---------+---------------------+%n");
                     }
                     break;
                 } catch (Exception e) {
