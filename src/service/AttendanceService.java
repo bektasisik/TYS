@@ -17,10 +17,12 @@ public class AttendanceService {
         this.students = students;
     }
 
-    // Yoklama almak için önce yoklama alacağı vakti seçer.
-    // Seçtiği vakite göre Attendance class'ını oluşturur.
-    // Oluşturduğu yoklama class'larını Accentandes listesine obje olarak ekler.
-    // Talebe listesinden talebeleri tek tek yoklama alır.
+    /**
+     * Yoklama almak için önce yoklama alacağı vakti seçer.
+     * Yoklama almak için önce yoklama alacağı vakti seçer.
+     * Oluşturduğu yoklama class'larını Accentandes listesine obje olarak ekler.
+     * Talebe listesinden talebeleri tek tek yoklama alır.
+     */
     public void takeAttendance() {
         if (students.size() == 0) {
             System.out.println("\nTalebe listeniz boş. Ana sayfaya yönlendiriliyorsunuz.");
@@ -82,8 +84,9 @@ public class AttendanceService {
             System.out.println("Yoklama işlemi bitmiştir. Ana sayfaya yönlendiriliyorsunuz. ");
         }
     }
-
-    //Yoklamalar listesini ekrana çağırır.
+    /**
+     * Yoklamalar listesini ekrana çağırır.
+     */
     public void printAttendances() {
         if (attendances.size() == 0) {
             System.out.println("\nYoklama listeniz boş. Ana sayfaya yönlendiriliyorsunuz.");
@@ -102,8 +105,9 @@ public class AttendanceService {
             printStudentAttendances();
         }
     }
-
-    //Yoklamalar listesinden seçilen yoklamaya göre vakit ve tarihe göre alınan yoklama sonucunu gösterir.
+    /**
+     * Yoklamalar listesinden seçilen yoklamaya göre vakit ve tarihe göre alınan yoklama sonucunu gösterir.
+     */
     public void printStudentAttendances() {
         if (studentAttendances.size() == 0) {
             System.out.println("Listeniz Boş. Ana Ekrana yönlendiriliyorsunuz.");
@@ -146,9 +150,13 @@ public class AttendanceService {
             }
         }
     }
+
+    /**
+     * Talebe ID'ye göre tum talebeyi listeler.
+     */
     public void printWithStudentId() {
         if (attendances.size() == 0) {
-            System.out.println("\nListeniz boş. Ana sayfaya yönlendiriliyorsunuz.");
+            System.out.println("\nYoklama listeniz boş. Ana sayfaya yönlendiriliyorsunuz.");
         } else {
             String leftAlignFormat = "| %-7s | %-20s | %-19s |%n";
             System.out.format("+----------+----------------------+---------------------+%n");
@@ -165,6 +173,9 @@ public class AttendanceService {
         }
     }
 
+    /**
+     * printWithStudentId() ile listelenen talebelerin seçilen talebeye göre hangi vakitte olmadığını listeler.
+     */
     public void printAttendanceWithStudentId() {
         if (studentAttendances.size() == 0) {
             System.out.println("\nTalebe listeniz Boş. Ana Ekrana yönlendiriliyorsunuz.");

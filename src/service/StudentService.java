@@ -14,9 +14,11 @@ public class StudentService {
         students.add(student);
     }
 
-    // Kullanıcıdan AD-SOYAD bilgilerini alır.
-    // Aldığı bilgiler ile student class'ını oluşturur.
-    // O class'ı bir obje haline getirir ve listeye ekler.
+    /**
+     * Kullanıcıdan AD-SOYAD bilgilerini alır.
+     * Aldığı bilgiler ile student class'ını oluşturur.
+     * O class'ı bir obje haline getirir ve listeye ekler.
+     */
     public void addStudent() {
         String name, surname;
         while (true) {
@@ -45,7 +47,9 @@ public class StudentService {
         System.out.println("Talebe Eklenmiştir.\n");
     }
 
-    //Talebe listesini ekrana yazdırır.
+    /**
+     *  Talebe listesini ekrana yazdırır.
+     */
     public void printStudents() {
         if (students.size() == 0) {
             System.out.println("\nTalebe listeniz boş. Ana sayfaya yönlendiriliyorsunuz.");
@@ -66,6 +70,11 @@ public class StudentService {
         }
     }
 
+    /**
+     * @param message
+     * @param maxLength
+     * @return
+     */
     private String getNameInput(String message, int maxLength) {
         String name = "";
         while (true) {
