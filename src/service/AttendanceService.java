@@ -80,7 +80,6 @@ public class AttendanceService {
                 StudentAttendance studentAttendance = new StudentAttendance(student, attendance, isAbsence);
                 studentAttendances.add(studentAttendance);
             }
-            System.out.format("+----------------------+---------------------+---------------------+%n");
             System.out.println("Yoklama işlemi bitmiştir. Ana sayfaya yönlendiriliyorsunuz. ");
         }
     }
@@ -190,13 +189,13 @@ public class AttendanceService {
                         continue;
                     }
                     Student student = studentOptional.get();
-                    System.out.format("+----------------+---------+---------------------+%n");
-                    String leftAlignFormat1 = "| %-39s |%n";
+                    System.out.format("+----------------+---------+------------------+%n");
+                    String leftAlignFormat1 = "| %-42s |%n";
                     System.out.format(leftAlignFormat1,
                             "\t  " + student.getName() + " " + student.getSurname());
-                    System.out.format("+----------------+---------+---------------------+%n");
-                    System.out.format("|      Tarih     |  Vakit  | DEVAMSIZLIK BİLGİSİ |%n");
-                    System.out.format("+----------------+---------+---------------------+%n");
+                    System.out.format("+----------------+---------+------------------+%n");
+                    System.out.format("|      Tarih     |  Vakit  | DEVAMSIZ BİLGİSİ |%n");
+                    System.out.format("+----------------+---------+------------------+%n");
                     String leftAlignFormat2 = "| %-14s | %-7s | %-11s |%n";
                     List<StudentAttendance> studentAttendanceFilter = studentAttendances.stream()
                             .filter(studentAttendance -> studentAttendance.getStudent().getId() == student.getId()).toList();
@@ -207,8 +206,8 @@ public class AttendanceService {
                         studentAttendanceFilter.forEach(studentAttendance -> System.out.format(leftAlignFormat2,
                                 " " + studentAttendance.getAttendance().getDate(),
                                 " " + studentAttendance.getAttendance().getPrayerTime(),
-                                "\t\t" + studentAttendance.getIsAbsenceToString()));
-                        System.out.format("+----------------+---------+---------------------+%n");
+                                "\t\t" + studentAttendance.getIsAbsenceToString() + "\t"));
+                        System.out.format("+----------------+---------+------------------+%n");
                     }
                     break;
                 } catch (Exception e) {

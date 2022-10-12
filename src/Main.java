@@ -32,7 +32,7 @@ public class Main {
         while (choiceBool) {
             System.out.println("\nYapmak istediğiniz işlemi seçiniz...");
             System.out.println("+----+--------------------------------------+");
-            System.out.println("| 1) | Sisteme Talebe Ekleme                |");
+            System.out.println("| 1) | Talebe İşlemleri                     |");
             System.out.println("| 2) | Talebe Listesi                       |");
             System.out.println("| 3) | Yoklama Alma                         |");
             System.out.println("| 4) | Vakite Göre Yoklama Sonucu Listesi   |");
