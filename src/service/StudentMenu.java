@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public class StudentMenu {
     private final StudentService studentService;
-    public List<Student> students;
     private final Scanner input = new Scanner(System.in);
+    public List<Student> students;
 
     public StudentMenu(@NotNull StudentService studentService) {
         this.students = studentService.students;
@@ -31,8 +31,8 @@ public class StudentMenu {
 
         label:
         while (true) {
-            String choise = input.nextLine();
-            switch (choise) {
+            String choice = input.nextLine();
+            switch (choice) {
                 case "1":
                     studentService.addStudent();
                     break label;

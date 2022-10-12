@@ -92,7 +92,7 @@ public class AttendanceService {
             System.out.println("\nYoklama listeniz boş. Ana sayfaya yönlendiriliyorsunuz.");
         } else {
             String leftAlignFormat = "| %-7s | %-13s | %-7s |%n";
-            System.out.format("+----------+-----------------+---------+%n");
+            System.out.format("\n+----------+-----------------+---------+%n");
             System.out.format("|    No    |      Tarih      |  Vakit  |%n");
             System.out.format("+----------+-----------------+---------+%n");
             for (Attendance attendance : attendances) {
@@ -116,14 +116,14 @@ public class AttendanceService {
             System.out.print("Lütfen listelemek istediğiniz yoklama vaktini seçiniz: ");
             while (true) {
                 try {
-                    String choiceAttendanceId = input.next();
+                    String choiceAttendanceId = input.nextLine();
                     Optional<Attendance> attendanceOptional = attendances.stream().filter(attendance -> attendance.getId() == Integer.parseInt(choiceAttendanceId)).findFirst();
                     if (attendanceOptional.isEmpty()) {
                         System.out.print("Lütfen listede olan yoklama numaralarından birini seçiniz: ");
                         continue;
                     }
                     Attendance attendance = attendanceOptional.get();
-                    System.out.format("+------------------------------------------------------------------+%n");
+                    System.out.format("\n+------------------------------------------------------------------+%n");
                     String leftAlignFormat1 = "| \t\t\t\t%-12s - %-32s |%n";
                     System.out.format(leftAlignFormat1,
                             "\t" + attendance.getDate(),

@@ -10,6 +10,7 @@ public class Main {
         StudentService studentService = new StudentService();
         AttendanceService attendanceService = new AttendanceService(studentService.students);
         StudentMenu studentMenu = new StudentMenu(studentService);
+        AttendanceMenu attendanceMenu = new AttendanceMenu(attendanceService);
 
         // Listeye proje başlatıldığı zaman default 10 adet talebe ekler.
         // Bir sonraki talebe 11. sıradan başlar.
@@ -34,10 +35,8 @@ public class Main {
             System.out.println("\nYapmak istediğiniz işlemi seçiniz...");
             System.out.println("+----+--------------------------------------+");
             System.out.println("| 1) | Talebe İşlemleri                     |");
-            System.out.println("| 2) | Yoklama Alma                         |");
-            System.out.println("| 3) | Vakite Göre Yoklama Sonucu Listesi   |");
-            System.out.println("| 4) | Talebeye Göre Yoklama Sonucu Listesi |");
-            System.out.println("| 5) | Sistemden Çıkış                      |");
+            System.out.println("| 2) | Yoklama İşlemleri                    |");
+            System.out.println("| 3) | Sistemden Çıkış                      |");
             System.out.println("+----+--------------------------------------+");
             System.out.print("İşlem: ");
             String choice = input.next();
@@ -45,13 +44,9 @@ public class Main {
                 // printStudentMenu();
                 case "1" -> studentMenu.printStudentMenu();
                 // takeAttendance();
-                case "2" -> attendanceService.takeAttendance();
-                // printAttendances();
-                case "3" -> attendanceService.printAttendances();
-                // printWithStudentId();
-                case "4" -> attendanceService.printWithStudentId();
+                case "2" -> attendanceMenu.printAttendanceMenu();
                 // exit
-                case "5" -> choiceBool = false;
+                case "3" -> choiceBool = false;
                 default -> System.out.println("Yanlış Tuşa bastınız.");
             }
         }

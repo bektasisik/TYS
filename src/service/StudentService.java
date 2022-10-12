@@ -83,13 +83,22 @@ public class StudentService {
         }
     }
 
+    /**
+     * Seçilen talebeye yeni ad soyad verilerek listede güncellenmesini sağlar.
+     */
     public void updateStudent() {
         printStudents();
         System.out.print("Güncellemek istediğiniz talebenin numarasını giriniz: ");
         while (true) {
             String choiceStudentId = input.nextLine();
-            // todo
-            Optional<Student> studentOptional = students.stream().filter(student -> student.getId() == Integer.parseInt(choiceStudentId)).findFirst();
+            int studentId;
+            try {
+                studentId = Integer.parseInt(choiceStudentId);
+            } catch (Exception e) {
+                System.out.print("Hatalı giriş yaptınız. Lütfen Listedeki numaralardan seçiniz: ");
+                continue;
+            }
+            Optional<Student> studentOptional = students.stream().filter(student -> student.getId() == studentId).findFirst();
             if (studentOptional.isEmpty()) {
                 System.out.print("Lütfen listede var olan bir sayı giriniz: ");
                 continue;
@@ -98,16 +107,8 @@ public class StudentService {
             System.out.print("Seçilen talebe: " + student.getName() + " " + student.getSurname());
             student.setName(getNameInput("adı", 20));
             student.setSurname(getNameInput("soyadı", 19));
-
+            System.out.println("Talebe Güncellenmiştir. Ana sayfaya yönlendiliriliyorsunuz.");
             break;
-//            int choiceID = input.nextInt();
-//            if (students.stream().anyMatch(students -> students.getId() == choiceID)) {
-//                String choiceStudent = students.stream().filter(student -> student.getId() == choiceID).findFirst().get().getName() + " " +
-//                        students.stream().filter(student -> student.getId() == choiceID).findFirst().get().getSurname();
-//                System.out.print("Seçilen talebe: " + choiceStudent);
-//
-//                break;
-//            }
         }
     }
 
