@@ -2,8 +2,8 @@ package domain;
 
 public class Student {
     private final int id;
-    private final String name;
-    private final String surname;
+    private String name;
+    private String surname;
     private int absent;
 
     public int getId() {
@@ -12,6 +12,14 @@ public class Student {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getSurname() {

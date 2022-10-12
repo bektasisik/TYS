@@ -86,6 +86,29 @@ public class StudentService {
     public void updateStudent() {
         printStudents();
         System.out.print("Güncellemek istediğiniz talebenin numarasını giriniz: ");
+        while (true) {
+            String choiceStudentId = input.nextLine();
+            // todo
+            Optional<Student> studentOptional = students.stream().filter(student -> student.getId() == Integer.parseInt(choiceStudentId)).findFirst();
+            if (studentOptional.isEmpty()) {
+                System.out.print("Lütfen listede var olan bir sayı giriniz: ");
+                continue;
+            }
+            Student student = studentOptional.get();
+            System.out.print("Seçilen talebe: " + student.getName() + " " + student.getSurname());
+            student.setName(getNameInput("adı", 20));
+            student.setSurname(getNameInput("soyadı", 19));
+
+            break;
+//            int choiceID = input.nextInt();
+//            if (students.stream().anyMatch(students -> students.getId() == choiceID)) {
+//                String choiceStudent = students.stream().filter(student -> student.getId() == choiceID).findFirst().get().getName() + " " +
+//                        students.stream().filter(student -> student.getId() == choiceID).findFirst().get().getSurname();
+//                System.out.print("Seçilen talebe: " + choiceStudent);
+//
+//                break;
+//            }
+        }
     }
 
     /**
@@ -95,10 +118,17 @@ public class StudentService {
         printStudents();
         System.out.print("Silmek istediğiniz talebenin numarasını giriniz: ");
         while (true) {
-            int choiceID = input.nextInt();
-            if (students.stream().anyMatch(students -> students.getId() == choiceID)) {
-                students.remove(choiceID-1);
-
+            String choice = input.nextLine();
+            int studentId;
+            try {
+                studentId = Integer.parseInt(choice);
+            } catch (Exception e) {
+                System.out.print("Hatalı giriş yaptınız. Lütfen Listedeki numaralardan seçiniz: ");
+                continue;
+            }
+            if (students.stream().anyMatch(students -> students.getId() == studentId)) {
+                students.removeIf(student -> student.getId() == studentId);
+                System.out.println("Seçilen talebe silinmiştir.");
                 break;
             } else System.out.print("Lütfen listede var olan bir sayı giriniz: ");
         }
@@ -110,20 +140,20 @@ public class StudentService {
      * @return
      */
     private String getNameInput(String message, int maxLength) {
-        String name;
+        String getInput;
         while (true) {
             System.out.format("\nTalebe %s giriniz: ", message);
-            name = input.nextLine();
-            if (!name.matches("[a-zA-Z ğüşöçıİĞÜŞÖÇ]+\\S\\D\\Z")) {
+            getInput = input.nextLine();
+            if (!getInput.matches("[a-zA-Z ğüşöçıİĞÜŞÖÇ]+\\S\\D\\Z")) {
                 System.out.println("\nLütfen sadece harf kullanın.");
                 continue;
             }
-            if (name.length() > maxLength) {
+            if (getInput.length() > maxLength) {
                 System.out.format("\n%s uzunluğu max %s olmalıdır.", message, maxLength);
                 continue;
             }
             break;
         }
-        return name;
+        return getInput;
     }
 }

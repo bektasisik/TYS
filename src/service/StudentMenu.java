@@ -1,25 +1,29 @@
 package service;
 
 import domain.Student;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Scanner;
 
-public class StudentCRUDMenu {
+public class StudentMenu {
     private final StudentService studentService;
     public List<Student> students;
     private final Scanner input = new Scanner(System.in);
 
-    public StudentCRUDMenu(StudentService studentService) {
+    public StudentMenu(@NotNull StudentService studentService) {
         this.students = studentService.students;
         this.studentService = studentService;
     }
 
-    public void studentMenu() {
+    public void printStudentMenu() {
+        System.out.println();
+        System.out.println("+----+---------------------+");
+        System.out.println("|    TALEBE İŞLEM MENÜSÜ   |");
         System.out.println("+----+---------------------+");
         System.out.println("| 1) | Talebe Ekleme       |");
         System.out.println("| 2) | Talebe Listeleme    |");
-        System.out.println("| 3) | Talebe Güneclleme   |");
+        System.out.println("| 3) | Talebe Güncelleme   |");
         System.out.println("| 4) | Talebe Silme        |");
         System.out.println("| 5) | Geri                |");
         System.out.println("+----+---------------------+");
