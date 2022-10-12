@@ -9,15 +9,16 @@ public class Main {
         //Services
         StudentService studentService = new StudentService();
         AttendanceService attendanceService = new AttendanceService(studentService.students);
+        StudentCRUDMenu studentCRUDMenu = new StudentCRUDMenu(studentService);
 
         // Listeye proje başlatıldığı zaman default 10 adet talebe ekler.
         // Bir sonraki talebe 11. sıradan başlar.
         studentService.addStudent("Veli", "Çam");
         studentService.addStudent("Abdurrahman", "Kutlu");
-        studentService.addStudent("Emre", "Yavuz");
-        studentService.addStudent("Kaan", "Koca");
-        studentService.addStudent("Enes Bahadır", "Yıldırım");
-        studentService.addStudent("Enver", "Yıldırım");
+//        studentService.addStudent("Emre", "Yavuz");
+//        studentService.addStudent("Kaan", "Koca");
+//        studentService.addStudent("Enes Bahadır", "Yıldırım");
+//        studentService.addStudent("Enver", "Yıldırım");
 //        studentService.addStudent("Yasin", "Büzgülü");
 //        studentService.addStudent("Bektaş", "Işık");
 //        studentService.addStudent("Mehmet Ercan", "Akcan");
@@ -33,42 +34,24 @@ public class Main {
             System.out.println("\nYapmak istediğiniz işlemi seçiniz...");
             System.out.println("+----+--------------------------------------+");
             System.out.println("| 1) | Talebe İşlemleri                     |");
-            System.out.println("| 2) | Talebe Listesi                       |");
-            System.out.println("| 3) | Yoklama Alma                         |");
-            System.out.println("| 4) | Vakite Göre Yoklama Sonucu Listesi   |");
-            System.out.println("| 5) | Talebeye Göre Yoklama Sonucu Listesi |");
-            System.out.println("| 6) | Sistemden Çıkış                      |");
+            System.out.println("| 2) | Yoklama Alma                         |");
+            System.out.println("| 3) | Vakite Göre Yoklama Sonucu Listesi   |");
+            System.out.println("| 4) | Talebeye Göre Yoklama Sonucu Listesi |");
+            System.out.println("| 5) | Sistemden Çıkış                      |");
             System.out.println("+----+--------------------------------------+");
             System.out.print("İşlem: ");
             String choice = input.next();
             switch (choice) {
-                //addStudent();
-                case "1" -> {
-                    String addAgain;
-                    studentService.addStudent();
-                    System.out.print("Talebe Eklenmeye devam edilsin mi?(e/h):");
-                    while (true) {
-                        addAgain = input.next();
-                        if ("e".equals(addAgain)) {
-                            studentService.addStudent();
-                            System.out.print("Talebe Eklenmeye devam edilsin mi?(e/h):");
-                        } else if ("h".equals(addAgain)) {
-                            break;
-                        } else {
-                            System.out.print("Yanlış bir tuşa bastınız. (e/h):");
-                        }
-                    }
-                }
-                //printStudents();
-                case "2" -> studentService.printStudents();
-                //takeAttendance();
-                case "3" -> attendanceService.takeAttendance();
-                //printAttendances();
-                case "4" -> attendanceService.printAttendances();
-                //printWithStudentId();
-                case "5" -> attendanceService.printWithStudentId();
-                //exit
-                case "6" -> choiceBool = false;
+                // studentMenu();
+                case "1" -> studentCRUDMenu.studentMenu();
+                // takeAttendance();
+                case "2" -> attendanceService.takeAttendance();
+                // printAttendances();
+                case "3" -> attendanceService.printAttendances();
+                // printWithStudentId();
+                case "4" -> attendanceService.printWithStudentId();
+                // exit
+                case "5" -> choiceBool = false;
                 default -> System.out.println("Yanlış Tuşa bastınız.");
             }
         }

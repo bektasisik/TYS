@@ -20,35 +20,48 @@ public class StudentService {
      * O class'ı bir obje haline getirir ve listeye ekler.
      */
     public void addStudent() {
-        String name, surname;
         while (true) {
-            name = getNameInput("adı", 20);
-            surname = getNameInput("soyadı", 19);
+            String addAgain;
+            String name, surname;
+            while (true) {
+                name = getNameInput("adı", 20);
+                surname = getNameInput("soyadı", 19);
 
-            if (name.length()<3){
-                System.out.println("İsim uzunluğu min 3 karakter olmalıdır.");
-                continue;
+                if (name.length() < 3) {
+                    System.out.println("İsim uzunluğu min 3 karakter olmalıdır.");
+                    continue;
+                }
+                if (surname.length() < 2) {
+                    System.out.println("Soyisim uzunluğu min 2 karakter olmalıdır.");
+                    continue;
+                }
+                if (name.length() + surname.length() < 5) {
+                    System.out.println("Yanlış AD-SOYAD girdiniz.");
+                    continue;
+                }
+                break;
             }
-            if (surname.length()<2){
-                System.out.println("Soyisim uzunluğu min 2 karakter olmalıdır.");
+            Student student = new Student(studentId++, name, surname);
+            students.add(student);
+            System.out.println("\nTalebe No: " + student.getId()
+                    + "\nTalebe Ad: " + student.getName()
+                    + "\nTalebe Soyadı: " + student.getSurname());
+            System.out.println("Talebe Eklenmiştir.\n");
+            System.out.print("Talebe Eklenmeye devam edilsin mi?(e/h):");
+            addAgain = input.nextLine();
+            if ("e".equals(addAgain)) {
                 continue;
-            }
-            if (name.length() + surname.length() < 5) {
-                System.out.println("Yanlış AD-SOYAD girdiniz.");
-                continue;
+            } else if ("h".equals(addAgain)) {
+                break;
+            } else {
+                System.out.print("Yanlış bir tuşa bastınız. (e/h):");
             }
             break;
         }
-        Student student = new Student(studentId++, name, surname);
-        students.add(student);
-        System.out.println("\nTalebe No: " + student.getId()
-                + "\nTalebe Ad: " + student.getName()
-                + "\nTalebe Soyadı: " + student.getSurname());
-        System.out.println("Talebe Eklenmiştir.\n");
     }
 
     /**
-     *  Talebe listesini ekrana yazdırır.
+     * Talebe listesini ekrana yazdırır.
      */
     public void printStudents() {
         if (students.size() == 0) {
@@ -70,13 +83,34 @@ public class StudentService {
         }
     }
 
+    public void updateStudent() {
+        printStudents();
+        System.out.print("Güncellemek istediğiniz talebenin numarasını giriniz: ");
+    }
+
+    /**
+     * Talebe listesinden seçilen ID ye göre talebe siler.
+     */
+    public void deleteStudent() {
+        printStudents();
+        System.out.print("Silmek istediğiniz talebenin numarasını giriniz: ");
+        while (true) {
+            int choiceID = input.nextInt();
+            if (students.stream().anyMatch(students -> students.getId() == choiceID)) {
+                students.remove(choiceID-1);
+
+                break;
+            } else System.out.print("Lütfen listede var olan bir sayı giriniz: ");
+        }
+    }
+
     /**
      * @param message
      * @param maxLength
      * @return
      */
     private String getNameInput(String message, int maxLength) {
-        String name = "";
+        String name;
         while (true) {
             System.out.format("\nTalebe %s giriniz: ", message);
             name = input.nextLine();
