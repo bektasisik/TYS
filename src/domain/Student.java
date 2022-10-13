@@ -30,7 +30,7 @@ public class Student {
         return absent;
     }
 
-    public void setAbsent() {
+    public void increaseAbsent() {
         this.absent = absent + 1;
     }
 

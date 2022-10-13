@@ -73,7 +73,7 @@ public class AttendanceServiceOld {
                     if (kontrol.equals("+")) break;
                     else if (kontrol.equals("-")) {
                         isAbsence = false;
-                        student.setAbsent();
+                        student.increaseAbsent();
                         break;
                     } else System.out.print("Yanlış tuşa bastınız (+ yada - tuşundan birine basınız.): ");
                 }
