@@ -1,7 +1,8 @@
-package service;
+package ui;
 
 import domain.Student;
 import org.jetbrains.annotations.NotNull;
+import service.StudentService;
 
 import java.util.List;
 import java.util.Scanner;

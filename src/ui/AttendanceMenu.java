@@ -1,11 +1,12 @@
-package service;
+package ui;
 
 import org.jetbrains.annotations.NotNull;
+import service.AttendanceService;
 
 import java.util.Scanner;
 
 public class AttendanceMenu {
-    AttendanceService attendanceService;
+    private final AttendanceService attendanceService;
     private final Scanner input = new Scanner(System.in);
 
     public AttendanceMenu(@NotNull AttendanceService attendanceService) {
@@ -24,21 +25,20 @@ public class AttendanceMenu {
         System.out.println("+----+--------------------------------+");
         System.out.print("İşlem: ");
 
-        label:
         while (true) {
             String choice = input.nextLine();
             switch (choice) {
                 case "1":
                     attendanceService.takeAttendance();
-                    break label;
+                    return;
                 case "2":
                     attendanceService.printAttendances();
-                    break label;
+                    return;
                 case "3":
                     attendanceService.printWithStudentId();
-                    break label;
+                    return;
                 case "4":
-                    break label;
+                    return;
                 default:
                     System.out.print("Yanlış tuşa bastınız. Lütfen listeden seçiniz: ");
             }

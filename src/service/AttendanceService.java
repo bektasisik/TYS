@@ -11,7 +11,7 @@ public class AttendanceService {
     private final List<StudentAttendance> studentAttendances = new ArrayList<>();
     private final List<Student> students;
     private final SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-    private int attendanceId = 1;
+    private int sequence = 1;
 
     public AttendanceService(List<Student> students) {
         this.students = students;
@@ -41,7 +41,7 @@ public class AttendanceService {
 
             label:
             while (true) {
-                String choice = input.next();
+                String choice = input.nextLine();
                 switch (choice) {
                     case "1":
                         prayerTime = "Sabah";
@@ -62,14 +62,14 @@ public class AttendanceService {
                         System.out.print("Yanlış tuşa bastınız bir daha seçim yapınız: ");
                 }
             }
-            Attendance attendance = new Attendance(attendanceId++, prayerTime);
+            Attendance attendance = new Attendance(sequence++, prayerTime);
             attendances.add(attendance);
             System.out.println("\n" + prayerTime + " vakti için talebe burada ise (+) tuşuna basınız. Değil ise (-) tuşuna basınız.");
             for (Student student : students) {
                 System.out.print(student.getName() + " " + student.getSurname() + ": ");
                 boolean isAbsence = true;
                 while (true) {
-                    String kontrol = input.next();
+                    String kontrol = input.nextLine();
                     if (kontrol.equals("+")) break;
                     else if (kontrol.equals("-")) {
                         isAbsence = false;
@@ -115,39 +115,43 @@ public class AttendanceService {
         } else {
             System.out.print("Lütfen listelemek istediğiniz yoklama vaktini seçiniz: ");
             while (true) {
+                String choice = input.nextLine();
+                int attendId;
                 try {
-                    String choiceAttendanceId = input.nextLine();
-                    Optional<Attendance> attendanceOptional = attendances.stream().filter(attendance -> attendance.getId() == Integer.parseInt(choiceAttendanceId)).findFirst();
-                    if (attendanceOptional.isEmpty()) {
-                        System.out.print("Lütfen listede olan yoklama numaralarından birini seçiniz: ");
-                        continue;
-                    }
-                    Attendance attendance = attendanceOptional.get();
-                    System.out.format("\n+------------------------------------------------------------------+%n");
-                    String leftAlignFormat1 = "| \t\t\t\t%-12s - %-32s |%n";
-                    System.out.format(leftAlignFormat1,
-                            "\t" + attendance.getDate(),
-                            " " + attendance.getPrayerTime());
-                    System.out.format("+----------------------+---------------------+---------------------+%n");
-                    System.out.format("|          AD          |        SOYAD        | DEVAMSIZLIK BİLGİSİ |%n");
-                    System.out.format("+----------------------+---------------------+---------------------+%n");
-                    String leftAlignFormat2 = "| %-20s | %-19s | %-16s |%n";
-                    List<StudentAttendance> studentAttendanceFilter = studentAttendances.stream()
-                            .filter(studentAttendance -> studentAttendance.getAttendance().getId() == attendance.getId()).toList();
-
-                    if (studentAttendanceFilter.size() == 0) {
-                        System.out.println("Listeniz Boş. Ana Ekrana yönlendiriliyorsunuz.");
-                    } else {
-                        studentAttendanceFilter.forEach(studentAttendance -> System.out.format(leftAlignFormat2,
-                                studentAttendance.getStudent().getName(),
-                                studentAttendance.getStudent().getSurname(),
-                                "\t\t  " + studentAttendance.getIsAbsenceToString()));
-                        System.out.format("+----------------------+---------------------+---------------------+%n");
-                    }
-                    break;
+                    attendId = Integer.parseInt(choice);
                 } catch (Exception e) {
                     System.out.print("Hatalı giriş yaptınız. Lütfen Listedeki numaralardan seçiniz: ");
+                    continue;
                 }
+                Optional<Attendance> attendanceOptional = attendances.stream().filter(attendance -> attendance.getId() == attendId).findFirst();
+                if (attendanceOptional.isEmpty()) {
+                    System.out.print("Lütfen listede olan yoklama numaralarından birini seçiniz: ");
+                    continue;
+                }
+                Attendance attendance = attendanceOptional.get();
+                System.out.format("\n+------------------------------------------------------------------+%n");
+                String leftAlignFormat1 = "| \t\t\t\t%-12s - %-32s |%n";
+                System.out.format(leftAlignFormat1,
+                        "\t" + attendance.getDate(),
+                        " " + attendance.getPrayerTime());
+                System.out.format("+----------------------+---------------------+---------------------+%n");
+                System.out.format("|          AD          |        SOYAD        | DEVAMSIZLIK BİLGİSİ |%n");
+                System.out.format("+----------------------+---------------------+---------------------+%n");
+                String leftAlignFormat2 = "| %-20s | %-19s | %-16s |%n";
+                List<StudentAttendance> studentAttendanceFilter = studentAttendances.stream()
+                        .filter(studentAttendance -> studentAttendance.getAttendance().getId() == attendance.getId()).toList();
+
+                if (studentAttendanceFilter.size() == 0) {
+                    System.out.println("Listeniz Boş. Ana Ekrana yönlendiriliyorsunuz.");
+                } else {
+                    studentAttendanceFilter.forEach(studentAttendance -> System.out.format(leftAlignFormat2,
+                            studentAttendance.getStudent().getName(),
+                            studentAttendance.getStudent().getSurname(),
+                            "\t\t  " + studentAttendance.getIsAbsenceToString()));
+                    System.out.format("+----------------------+---------------------+---------------------+%n");
+                }
+                break;
+
             }
         }
     }

@@ -6,11 +6,11 @@ import java.util.*;
 
 public class StudentService {
     private final Scanner input = new Scanner(System.in);
-    private int studentId = 1;
+    private int sequence = 1;
     public List<Student> students = new ArrayList<>();
 
     public void addStudent(String name, String surname) {
-        Student student = new Student(studentId++, name, surname);
+        Student student = new Student(sequence++, name, surname);
         students.add(student);
     }
 
@@ -41,7 +41,7 @@ public class StudentService {
                 }
                 break;
             }
-            Student student = new Student(studentId++, name, surname);
+            Student student = new Student(sequence++, name, surname);
             students.add(student);
             System.out.println("\nTalebe No: " + student.getId()
                     + "\nTalebe Ad: " + student.getName()
@@ -129,6 +129,7 @@ public class StudentService {
             }
             if (students.stream().anyMatch(students -> students.getId() == studentId)) {
                 students.removeIf(student -> student.getId() == studentId);
+                // todo attendanceService.getStudentAttendances().removeIf(studentAttendances -> studentAttendances.getStudent().getId()==studentId);
                 System.out.println("Seçilen talebe silinmiştir.");
                 break;
             } else System.out.print("Lütfen listede var olan bir sayı giriniz: ");
@@ -136,9 +137,7 @@ public class StudentService {
     }
 
     /**
-     * @param message
-     * @param maxLength
-     * @return
+     * Kullanıcıya isim ve soyisim girmesini sağlar.
      */
     private String getNameInput(String message, int maxLength) {
         String getInput;
