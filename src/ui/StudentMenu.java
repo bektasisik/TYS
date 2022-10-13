@@ -1,20 +1,15 @@
 package ui;
 
-import domain.Student;
 import org.jetbrains.annotations.NotNull;
-import service.StudentServiceOld;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class StudentMenu {
-    private final StudentServiceOld studentServiceOld;
+    private final StudentUi studentUi;
     private final Scanner input = new Scanner(System.in);
-    public List<Student> students;
 
-    public StudentMenu(@NotNull StudentServiceOld studentServiceOld) {
-        this.students = studentServiceOld.students;
-        this.studentServiceOld = studentServiceOld;
+    public StudentMenu(@NotNull StudentUi studentUi) {
+        this.studentUi = studentUi;
     }
 
     public void printStudentMenu() {
@@ -30,21 +25,21 @@ public class StudentMenu {
         System.out.println("+----+---------------------+");
         System.out.print("İşlem: ");
 
-        label:
+        label: // todo
         while (true) {
             String choice = input.nextLine();
             switch (choice) {
                 case "1":
-                    studentServiceOld.addStudent();
+                    studentUi.addStudent();
                     break label;
                 case "2":
-                    studentServiceOld.printStudents();
+                    studentUi.printStudents();
                     break label;
                 case "3":
-                    studentServiceOld.updateStudent();
+                    studentUi.updateStudent();
                     break label;
                 case "4":
-                    studentServiceOld.deleteStudent();
+                    studentUi.deleteStudent();
                     break label;
                 case "5":
                     break label;

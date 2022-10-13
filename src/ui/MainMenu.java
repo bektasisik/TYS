@@ -8,16 +8,12 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class MainMenu {
-    StudentServiceOld studentServiceOld;
-    AttendanceServiceOld attendanceServiceOld;
-    StudentMenu studentMenu;
-    AttendanceMenu attendanceMenu;
+    private final StudentMenu studentMenu;
+    private final AttendanceMenu attendanceMenu;
 
-    public MainMenu(StudentServiceOld studentServiceOld, AttendanceServiceOld attendanceServiceOld) {
-        this.studentServiceOld = studentServiceOld;
-        this.attendanceServiceOld = attendanceServiceOld;
-        this.studentMenu = new StudentMenu(studentServiceOld);
-        this.attendanceMenu = new AttendanceMenu(attendanceServiceOld);
+    public MainMenu(StudentUi studentUi, AttendanceUi attendanceUi) {
+        this.studentMenu = new StudentMenu(studentUi);
+        this.attendanceMenu = new AttendanceMenu(attendanceUi);
     }
 
     public void printMainMenu() {
