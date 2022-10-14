@@ -6,11 +6,11 @@ import service.AttendanceServiceOld;
 import java.util.Scanner;
 
 public class AttendanceMenu {
-    private final AttendanceServiceOld attendanceServiceOld;
+    private final AttendanceUi attendanceUi;
     private final Scanner input = new Scanner(System.in);
 
-    public AttendanceMenu(@NotNull AttendanceServiceOld attendanceServiceOld) {
-        this.attendanceServiceOld = attendanceServiceOld;
+    public AttendanceMenu(@NotNull AttendanceUi attendanceUi) {
+        this.attendanceUi = attendanceUi;
     }
 
     public void printAttendanceMenu() {
@@ -29,13 +29,13 @@ public class AttendanceMenu {
             String choice = input.nextLine();
             switch (choice) {
                 case "1":
-                    attendanceServiceOld.takeAttendance();
+                    attendanceUi.takeAttendance();
                     return;
                 case "2":
-                    attendanceServiceOld.printAttendances();
+                    attendanceUi.printAttendances();
                     return;
                 case "3":
-                    attendanceServiceOld.printWithStudentId();
+                    attendanceUi.printWithStudentId();
                     return;
                 case "4":
                     return;

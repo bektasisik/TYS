@@ -1,35 +1,30 @@
-package service;
+package ui;
 
 import domain.Attendance;
 import domain.Student;
 import domain.StudentAttendance;
+import service.AttendanceService;
+import service.StudentService;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class AttendanceServiceOld {
-    private final Scanner input = new Scanner(System.in);
-    private final List<Attendance> attendances = new ArrayList<>();
-    private final List<StudentAttendance> studentAttendances = new ArrayList<>();
+public class AttendanceUi {
+    AttendanceService attendanceService;
+    private final int sequence = 1;
     private final List<Student> students;
     private final SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-    private int sequence = 1;
+    Scanner input = new Scanner(System.in);
 
-    public AttendanceServiceOld(List<Student> students) {
-        this.students = students;
+    public AttendanceUi(AttendanceService attendanceService, StudentService studentService) {
+        this.attendanceService = attendanceService;
+        this.students = studentService.getStudents();
     }
 
-    /**
-     * Yoklama almak için önce yoklama alacağı vakti seçer.
-     * Yoklama almak için önce yoklama alacağı vakti seçer.
-     * Oluşturduğu yoklama class'larını Accentandes listesine obje olarak ekler.
-     * Talebe listesinden talebeleri tek tek yoklama alır.
-     */
     public void takeAttendance() {
         if (students.size() == 0) {
             System.out.println("\nTalebe listeniz boş. Ana sayfaya yönlendiriliyorsunuz.");
         } else {
-            String prayerTime;
             System.out.println("\n" + formatter.format(new Date()) + " Lütfen Vakit Seçiniz.");
             System.out.println("+----+--------+");
             System.out.println("| 1) | Sabah  |");
@@ -41,55 +36,39 @@ public class AttendanceServiceOld {
 
             System.out.print("Vakit Seçiminiz: ");
 
-            label:
             while (true) {
+                String prayerTime;
                 String choice = input.nextLine();
                 switch (choice) {
-                    case "1":
+                    case "1" -> {
                         prayerTime = "Sabah";
-                        break label;
-                    case "2":
+                        return;
+                    }
+                    case "2" -> {
                         prayerTime = "Öğle";
-                        break label;
-                    case "3":
+                        return;
+                    }
+                    case "3" -> {
                         prayerTime = "İkindi";
-                        break label;
-                    case "4":
+                        return;
+                    }
+                    case "4" -> {
                         prayerTime = "Akşam";
-                        break label;
-                    case "5":
+                        return;
+                    }
+                    case "5" -> {
                         prayerTime = "Yatsı";
-                        break label;
-                    default:
-                        System.out.print("Yanlış tuşa bastınız bir daha seçim yapınız: ");
+                        return;
+                    }
+                    default -> System.out.print("Yanlış tuşa bastınız bir daha seçim yapınız: ");
                 }
             }
-            Attendance attendance = new Attendance(sequence++, prayerTime);
-            attendances.add(attendance);
-            System.out.println("\n" + prayerTime + " vakti için talebe burada ise (+) tuşuna basınız. Değil ise (-) tuşuna basınız.");
-            for (Student student : students) {
-                System.out.print(student.getName() + " " + student.getSurname() + ": ");
-                boolean isAbsence = true;
-                while (true) {
-                    String kontrol = input.nextLine();
-                    if (kontrol.equals("+")) break;
-                    else if (kontrol.equals("-")) {
-                        isAbsence = false;
-                        student.increaseAbsent();
-                        break;
-                    } else System.out.print("Yanlış tuşa bastınız (+ yada - tuşundan birine basınız.): ");
-                }
-                StudentAttendance studentAttendance = new StudentAttendance(student, attendance, isAbsence);
-                studentAttendances.add(studentAttendance);
-            }
-            System.out.println("Yoklama işlemi bitmiştir. Ana sayfaya yönlendiriliyorsunuz. ");
+//            attendanceService.takeAttendance(prayerTime,);
         }
     }
 
-    /**
-     * Yoklamalar listesini ekrana çağırır.
-     */
     public void printAttendances() {
+        List<Attendance> attendances = attendanceService.getAttendances();
         if (attendances.size() == 0) {
             System.out.println("\nYoklama listeniz boş. Ana sayfaya yönlendiriliyorsunuz.");
         } else {
@@ -108,11 +87,9 @@ public class AttendanceServiceOld {
         }
     }
 
-    /**
-     * Yoklamalar listesinden seçilen yoklamaya göre vakit ve tarihe göre alınan yoklama sonucunu gösterir.
-     */
     public void printStudentAttendances() {
-        if (studentAttendances.size() == 0) {
+        List<Attendance> attendances = attendanceService.getAttendances();
+        if (attendanceService.getStudentAttendances().size() == 0) {
             System.out.println("Listeniz Boş. Ana Ekrana yönlendiriliyorsunuz.");
         } else {
             System.out.print("Lütfen listelemek istediğiniz yoklama vaktini seçiniz: ");
@@ -140,8 +117,7 @@ public class AttendanceServiceOld {
                 System.out.format("|          AD          |        SOYAD        | DEVAMSIZLIK BİLGİSİ |%n");
                 System.out.format("+----------------------+---------------------+---------------------+%n");
                 String leftAlignFormat2 = "| %-20s | %-19s | %-16s |%n";
-                List<StudentAttendance> studentAttendanceFilter = studentAttendances.stream()
-                        .filter(studentAttendance -> studentAttendance.getAttendance().getId() == attendance.getId()).toList();
+                List<StudentAttendance> studentAttendanceFilter = attendanceService.getAttendancesByAttendanceId(attendId);
 
                 if (studentAttendanceFilter.size() == 0) {
                     System.out.println("Listeniz Boş. Ana Ekrana yönlendiriliyorsunuz.");
@@ -153,7 +129,6 @@ public class AttendanceServiceOld {
                     System.out.format("+----------------------+---------------------+---------------------+%n");
                 }
                 break;
-
             }
         }
     }
@@ -162,7 +137,7 @@ public class AttendanceServiceOld {
      * Talebe ID'ye göre tum talebeyi listeler.
      */
     public void printWithStudentId() {
-        if (attendances.size() == 0) {
+        if (attendanceService.getAttendances().size() == 0) {
             System.out.println("\nYoklama listeniz boş. Ana sayfaya yönlendiriliyorsunuz.");
         } else {
             String leftAlignFormat = "| %-7s | %-20s | %-19s |%n";
@@ -184,7 +159,7 @@ public class AttendanceServiceOld {
      * printWithStudentId() ile listelenen talebelerin seçilen talebeye göre hangi vakitte olmadığını listeler.
      */
     public void printAttendanceWithStudentId() {
-        if (studentAttendances.size() == 0) {
+        if (attendanceService.getStudentAttendances().size() == 0) {
             System.out.println("\nTalebe listeniz Boş. Ana Ekrana yönlendiriliyorsunuz.");
         } else {
             System.out.print("\nLütfen listelemek istediğiniz talebeyi seçiniz: ");
@@ -212,8 +187,7 @@ public class AttendanceServiceOld {
                 System.out.format("|      Tarih     |  Vakit  | DEVAMSIZ BİLGİSİ |%n");
                 System.out.format("+----------------+---------+------------------+%n");
                 String leftAlignFormat2 = "| %-14s | %-7s | %-11s |%n";
-                List<StudentAttendance> studentAttendanceFilter = studentAttendances.stream()
-                        .filter(studentAttendance -> studentAttendance.getStudent().getId() == student.getId()).toList();
+                List<StudentAttendance> studentAttendanceFilter = attendanceService.getAttendancesByStudentId(studentId);
 
                 if (studentAttendanceFilter.size() == 0) {
                     System.out.println("Listeniz Boş. Ana Ekrana yönlendiriliyorsunuz.");

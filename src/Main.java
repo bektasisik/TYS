@@ -11,9 +11,10 @@ import java.lang.instrument.IllegalClassFormatException;
 public class Main {
     public static void main(String[] args) throws IllegalClassFormatException {
         //Services
+        StudentService studentService = new StudentService();
         MainMenu mainMenu = new MainMenu(
-                new StudentUi(new StudentService()),
-                new AttendanceUi(new AttendanceService()));
+                new StudentUi(studentService),
+                new AttendanceUi(new AttendanceService(), studentService));
         mainMenu.printMainMenu();
     }
 }

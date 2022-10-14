@@ -99,6 +99,7 @@ public class StudentUi {
                 continue;
             }
             System.out.print("Seçilen talebe: " + student.getName() + " " + student.getSurname());
+//            String newName = studentService.getStudent(studentId).setName();
             studentService.updateStudent(studentId, student.getName(), student.getSurname());
             System.out.println("Talebe Güncellenmiştir. Ana sayfaya yönlendiliriliyorsunuz.");
             break;
