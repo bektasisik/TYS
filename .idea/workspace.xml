@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="10a5ebb1-c01a-4e15-a842-dae06ddf86f3" name="Changes" comment="Attendance için ui işlemleri yapıldı.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="taskAO-21" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="taskAO-21" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="taskAO-21" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2FelEeEUbGYGXQY78bfvAOyOBLs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/bektasisik/Downloads/TYS&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="domain" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="18" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="TYS" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="10a5ebb1-c01a-4e15-a842-dae06ddf86f3" name="Changes" comment="" />
+      <created>1664860319899</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1664860319899</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Domain ve service classları oluşturuldu.">
+      <created>1665070195422</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665070195422</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Class package düzenlendi ve kod çalışır hale getirildi. Kodun eski hali MyTemporaryTYS package adlı klasorun altında toplandı.">
+      <created>1665126648710</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665126648710</updated>
+    </task>
+    <task id="LOCAL-00003" summary="while kontrolleri yapıldı. encapsulation işlemleri yapıldı. (stream().noneMatch()) kontrolü yapıldı. türkçe terimler çevrildi.">
+      <created>1665178484945</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665178484945</updated>
+    </task>
+    <task id="LOCAL-00004" summary="While kontorlleri yapıldı. Console table işlemleri yapıldı.&#10;comment satırları eklendi.">
+      <created>1665241388258</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665241388259</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Filter kodundaki hata düzeltildi.&#10;listeye program başlayınca mevcut 10 talebe eklemesi yapıldı.">
+      <created>1665367284141</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665367284142</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Console'da göze hoş tablolama işlemi yapıldı.">
+      <created>1665371645670</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1665371645670</updated>
+    </task>
+    <task id="LOCAL-00007" summary="java jdk hatası çözüldü">
+      <created>1665559777719</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1665559777719</updated>
+    </task>
+    <task id="LOCAL-00008" summary="talebe işlemleri tek bir classta toplandı.&#10;talebe silme işlemi eklendi.">
+      <created>1665564892910</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1665564892910</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Talebe Güncelleme işlemi eklendi.&#10;Silme işlemi listedeki indexe göre değil talebe objesinin nuamrasına göre yapıldı.">
+      <created>1665587992677</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1665587992677</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Yoklama işlemleri bir menuye toplandı&#10;talebe güncellemede hatalı giriş sonucu olusan hata try catch ile kontrol altına alındı">
+      <created>1665604781384</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1665604781384</updated>
+    </task>
+    <task id="LOCAL-00011" summary="main menu oluşturuldu, input hatası giderildi.">
+      <created>1665645925742</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1665645925742</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Yeni servisler oluşturuldu.">
+      <created>1665647486564</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1665647486564</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Yeni servisler implement edildi.">
+      <created>1665656555132</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1665656555132</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Student için ui işlemleri yapıldı.">
+      <created>1665669274766</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1665669274766</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Attendance için ui işlemleri yapıldı.">
+      <created>1665728017701</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1665728017701</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Domain ve service classları oluşturuldu." />
+    <MESSAGE value="Class package düzenlendi ve kod çalışır hale getirildi. Kodun eski hali MyTemporaryTYS package adlı klasorun altında toplandı." />
+    <MESSAGE value="while kontrolleri yapıldı. encapsulation işlemleri yapıldı. (stream().noneMatch()) kontrolü yapıldı. türkçe terimler çevrildi." />
+    <MESSAGE value="While kontorlleri yapıldı. Console table işlemleri yapıldı.&#10;comment satırları eklendi." />
+    <MESSAGE value="Filter kodundaki hata düzeltildi.&#10;listeye program başlayınca mevcut 10 talebe eklemesi yapıldı." />
+    <MESSAGE value="Console'da göze hoş tablolama işlemi yapıldı." />
+    <MESSAGE value="java jdk hatası çözüldü" />
+    <MESSAGE value="talebe işlemleri tek bir classta toplandı.&#10;talebe silme işlemi eklendi." />
+    <MESSAGE value="Talebe Güncelleme işlemi eklendi.&#10;Silme işlemi listedeki indexe göre değil talebe objesinin nuamrasına göre yapıldı." />
+    <MESSAGE value="Yoklama işlemleri bir menuye toplandı&#10;talebe güncellemede hatalı giriş sonucu olusan hata try catch ile kontrol altına alındı" />
+    <MESSAGE value="main menu oluşturuldu, input hatası giderildi." />
+    <MESSAGE value="Yeni servisler oluşturuldu." />
+    <MESSAGE value="Yeni servisler implement edildi." />
+    <MESSAGE value="Student için ui işlemleri yapıldı." />
+    <MESSAGE value="Attendance için ui işlemleri yapıldı." />
+    <option name="LAST_COMMIT_MESSAGE" value="Attendance için ui işlemleri yapıldı." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalStateException" package="java.lang" />
+          <option name="timeStamp" value="5" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="8" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.UnknownFormatConversionException" package="java.util" />
+          <option name="timeStamp" value="42" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
