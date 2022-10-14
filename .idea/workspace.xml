@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10a5ebb1-c01a-4e15-a842-dae06ddf86f3" name="Changes" comment="Attendance için ui işlemleri yapıldı.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="10a5ebb1-c01a-4e15-a842-dae06ddf86f3" name="Changes" comment="gitignore güncellemesi yapıldı.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665728017701</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="gitignore güncellemesi yapıldı.">
+      <created>1665728347571</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1665728347571</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -233,7 +240,8 @@
     <MESSAGE value="Yeni servisler implement edildi." />
     <MESSAGE value="Student için ui işlemleri yapıldı." />
     <MESSAGE value="Attendance için ui işlemleri yapıldı." />
-    <option name="LAST_COMMIT_MESSAGE" value="Attendance için ui işlemleri yapıldı." />
+    <MESSAGE value="gitignore güncellemesi yapıldı." />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore güncellemesi yapıldı." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
