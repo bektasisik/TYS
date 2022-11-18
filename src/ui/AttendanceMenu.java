@@ -1,16 +1,16 @@
 package ui;
 
 import org.jetbrains.annotations.NotNull;
-import service.AttendanceService;
+import service.AttendanceServiceOld;
 
 import java.util.Scanner;
 
 public class AttendanceMenu {
-    private final AttendanceService attendanceService;
+    private final AttendanceUi attendanceUi;
     private final Scanner input = new Scanner(System.in);
 
-    public AttendanceMenu(@NotNull AttendanceService attendanceService) {
-        this.attendanceService = attendanceService;
+    public AttendanceMenu(@NotNull AttendanceUi attendanceUi) {
+        this.attendanceUi = attendanceUi;
     }
 
     public void printAttendanceMenu() {
@@ -29,13 +29,13 @@ public class AttendanceMenu {
             String choice = input.nextLine();
             switch (choice) {
                 case "1":
-                    attendanceService.takeAttendance();
+                    attendanceUi.takeAttendance();
                     return;
                 case "2":
-                    attendanceService.printAttendances();
+                    attendanceUi.printAttendances();
                     return;
                 case "3":
-                    attendanceService.printWithStudentId();
+                    attendanceUi.printWithStudentId();
                     return;
                 case "4":
                     return;

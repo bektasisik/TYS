@@ -1,23 +1,19 @@
 package ui;
 
-import service.AttendanceService;
-import service.StudentService;
+import service.AttendanceServiceOld;
+import service.StudentServiceOld;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
 public class MainMenu {
-    StudentService studentService;
-    AttendanceService attendanceService;
-    StudentMenu studentMenu;
-    AttendanceMenu attendanceMenu;
+    private final StudentMenu studentMenu;
+    private final AttendanceMenu attendanceMenu;
 
-    public MainMenu(StudentService studentService, AttendanceService attendanceService) {
-        this.studentService = studentService;
-        this.attendanceService = attendanceService;
-        this.studentMenu = new StudentMenu(studentService);
-        this.attendanceMenu = new AttendanceMenu(attendanceService);
+    public MainMenu(StudentUi studentUi, AttendanceUi attendanceUi) {
+        this.studentMenu = new StudentMenu(studentUi);
+        this.attendanceMenu = new AttendanceMenu(attendanceUi);
     }
 
     public void printMainMenu() {
